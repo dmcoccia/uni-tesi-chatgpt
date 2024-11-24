@@ -3,7 +3,7 @@ import { OpenAI } from 'openai';
 import fs from 'fs';
 
 export const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: "chiave inserita qui"//process.env.OPENAI_API_KEY
 });
 
 export class lottomaticaChatbot {

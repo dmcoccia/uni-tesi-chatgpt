@@ -67,15 +67,6 @@ app.post("/message", async (req, res) => {
         messagesResponse.body.data.forEach((message) => {
             messages.push(message.content);
         });
-        // Visualizzo tutti i messaggi
-        /*const assistantResponses = messagesResponse.data.filter(msg => msg.role === 'assistant');
-        const response = assistantResponses.map(msg =>
-            msg.content
-                .filter(contentItem => contentItem.type === 'text')
-                .map(textContent => textContent.text.value)
-                .join('\n')
-        ).join('\n');*/
-        // Visualizzo l'ultimo messaggio
         const response = messages[0]?.filter(contentItem => contentItem.type === 'text').map(textContent => textContent.text.value).join('\n');
 
         res.json({ response });
